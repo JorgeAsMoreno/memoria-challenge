@@ -1,4 +1,3 @@
 export interface IWelcomeScreen {
-  level: number
-  changeLevel: () => void
+  setStart: (value: number) => void
 }
