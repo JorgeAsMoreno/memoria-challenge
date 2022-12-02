@@ -15,3 +15,8 @@ export const Title = styled.h1`
     animation: ${titleGradient} 4s ease infinite;
   }
 `
+
+export const Controls = styled.div`
+  display: flex;
+  flex-direction: column;
+`

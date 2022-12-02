@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen';
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -11,9 +11,16 @@ const Wrapper = styled.div`
 `
 
 export const App: React.FC = () => {
+  const [level, setLevel] = useState(0)
+
+  //Cambiar dificultad
+  const changeLevel = () => {
+    setLevel(level === 2 ? 0 : level + 1)
+  }
+
   return (
     <Wrapper>
-      <WelcomeScreen />
+      <WelcomeScreen {...{level, changeLevel}} />
     </Wrapper>
   );
 }
