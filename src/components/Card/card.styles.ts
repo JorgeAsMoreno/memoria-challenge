@@ -6,9 +6,9 @@ export const CardContainer = styled.div`
   height: calc(200px - 10px);
   width: calc(250px - 10px);
   cursor: pointer;
-
-  .card-image {
-    height: calc(200px - 10px);
-    width: calc(250px - 10px);
-  }
+`
+  
+export const Image = styled.img`
+  height: calc(200px - 10px);
+  width: calc(250px - 10px);
 `

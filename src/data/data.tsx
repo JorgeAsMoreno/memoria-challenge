@@ -11,130 +11,33 @@ export const data = [
   {
     id: 1,
     frontFace: moose,
-    name: "moose",
-    rotate: false,
-    validating: 0,
-    fixed: 0
+    name: "moose"
   },
   {
     id: 2,
     frontFace: moose,
-    name: "moose",
-    rotate: false,
-    validating: 0,
-    fixed: 0
+    name: "moose"
   },
   {
     id: 3,
     frontFace: bear,
-    name: "bear",
-    rotate: false,
-    validating: 0,
-    fixed: 0
+    name: "bear"
   },
   {
     id: 4,
     frontFace: bear,
-    name: "bear",
-    rotate: false,
-    validating: 0,
-    fixed: 0
+    name: "bear"
   },
   {
     id: 5,
     frontFace: ferret,
-    name: "ferret",
-    rotate: false,
-    validating: 0,
-    fixed: 0
+    name: "ferret"
   },
   {
     id: 6,
     frontFace: ferret,
-    name: "ferret",
-    rotate: false,
-    validating: 0,
-    fixed: 0
+    name: "ferret"
   },
-  {
-    id: 7,
-    frontFace: wolf,
-    name: "wolf",
-    rotate: false,
-    validating: 0,
-    fixed: 0
-  },
-  {
-    id: 8,
-    frontFace: wolf,
-    name: "wolf",
-    rotate: false,
-    validating: 0,
-    fixed: 0
-  },
-  {
-    id: 9,
-    frontFace: canary,
-    name: "canary",
-    rotate: false,
-    validating: 0,
-    fixed: 0
-  },
-  {
-    id: 10,
-    frontFace: canary,
-    name: "canary",
-    rotate: false,
-    validating: 0,
-    fixed: 0
-  },
-  {
-    id: 11,
-    frontFace: seal,
-    name: "seal",
-    rotate: false,
-    validating: 0,
-    fixed: 0
-  },
-  {
-    id: 12,
-    frontFace: seal,
-    name: "seal",
-    rotate: false,
-    validating: 0,
-    fixed: 0
-  },
-  {
-    id: 13,
-    frontFace: bird,
-    name: "bird",
-    rotate: false,
-    validating: 0,
-    fixed: 0
-  },
-  {
-    id: 14,
-    frontFace: bird,
-    name: "bird",
-    rotate: false,
-    validating: 0,
-    fixed: 0
-  },
-  {
-    id: 15,
-    frontFace: whale,
-    name: "whale",
-    rotate: false,
-    validating: 0,
-    fixed: 0
-  },
-  {
-    id: 16,
-    frontFace: whale,
-    name: "whale",
-    rotate: false,
-    validating: 0,
-    fixed: 0
-  },
+
 ]
 

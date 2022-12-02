@@ -1,17 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ICard } from "./Card.interface";
 import backFace from '../../assets/images/cover.png'
 import ReactCardFlip from "react-card-flip";
 import * as S from './card.styles'
 
-const Card: React.FC<ICard> = ({ frontFace, name, id }) => {
+const Card: React.FC<ICard> = ({ frontFace, name, id, handleFlipCard, unFlippedCards, disabledCards }) => {
   const [isFlipped, setisFlipped] = useState<boolean>(false)
+  const [hasEvent, setHasEvent] = useState<boolean>(true)
+  const handleImageClick = () => {
+    const value = handleFlipCard(name, id)
+    value !== 0 && setisFlipped(prev => !prev)
+  }
+
+  useEffect(() => {
+    if (unFlippedCards.includes(id)) {
+      setTimeout(() => {
+        setisFlipped(false)
+      }, 500)
+    }
+  }, [unFlippedCards])
+
+  useEffect(() => {
+    if (disabledCards.includes(id)) {
+      setHasEvent(false)
+    }
+  }, [disabledCards])
+
   return (
     <S.CardContainer>
-
       <ReactCardFlip {...{isFlipped}}>
-        <img src={backFace} alt={name} className="card-image" />
-        <img src={frontFace} alt={name} className="card-image"  />
+        <S.Image src={backFace} alt={`${name}back-face`} onClick={hasEvent ? handleImageClick : undefined} />
+        <S.Image src={frontFace} alt={`${name}front-face`} onClick={hasEvent ? handleImageClick : undefined} />
       </ReactCardFlip>
     </S.CardContainer>
   )

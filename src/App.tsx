@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import Board from './components/Board/Board'
 import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen'
+import WinScreen from './components/WinScreen/WinScreen'
 
 const Wrapper = styled.div`
   align-items: center;
@@ -27,7 +28,11 @@ export const App: React.FC = () => {
       }
       {
         stateGame === 1 ?
-        <Board /> : null
+        <Board {...{setStateGame}} /> : null
+      }
+      {
+        stateGame === 2 ?
+        <WinScreen /> : null
       }
     </Wrapper>
   );
