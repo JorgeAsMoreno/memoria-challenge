@@ -1,4 +1,4 @@
 export interface IButton {
   label: string
-  action?: () => void
+  action?: (value: number | any) => void
 }

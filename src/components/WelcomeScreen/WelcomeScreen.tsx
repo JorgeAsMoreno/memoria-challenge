@@ -3,15 +3,12 @@ import Button from "../Button/Button";
 import { IWelcomeScreen } from "./welcomeScreen.interface";
 import * as S from './welcomeScreen.styles'
 
-const WelcomeScreen: React.FC<IWelcomeScreen> = ({ level, changeLevel }) => {
-  const levelText = ["Facil", "Medio", "Dificl"]
-
+const WelcomeScreen: React.FC<IWelcomeScreen> = ({ setStart }) => {
   return (
     <S.WelcomeScreenContainer>
       <S.Title>Juego de <span>memoria</span></S.Title>
       <S.Controls>
-        <Button label={levelText[level]} action={changeLevel} />
-        <Button label="Iniciar juego"  />
+        <Button label="Iniciar juego" action={() => setStart(1)} />
       </S.Controls>
     </S.WelcomeScreenContainer>
   )

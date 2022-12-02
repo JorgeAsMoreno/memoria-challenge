@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Board from './components/Board/Board'
 import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen'
 
 const Wrapper = styled.div`
@@ -11,16 +12,23 @@ const Wrapper = styled.div`
 `
 
 export const App: React.FC = () => {
-  const [level, setLevel] = useState(0)
+  const [stateGame, setStateGame] = useState(0)
 
-  //Cambiar dificultad
-  const changeLevel = () => {
-    setLevel(level === 2 ? 0 : level + 1)
+  //start game, 0 is not started, 1 in progress, 2 finished
+  const changeStateGame = (value: number): void => {
+    setStateGame(value)
   }
 
   return (
     <Wrapper>
-      <WelcomeScreen {...{level, changeLevel}} />
+      {
+        stateGame === 0 ?
+        <WelcomeScreen setStart={changeStateGame} /> : null
+      }
+      {
+        stateGame === 1 ?
+        <Board /> : null
+      }
     </Wrapper>
   );
 }
