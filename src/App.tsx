@@ -1,10 +1,11 @@
 import React from 'react';
+import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-
+      <WelcomeScreen />
     </div>
   );
 }
