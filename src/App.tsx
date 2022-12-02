@@ -1,12 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
 import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen';
-import './App.css';
 
-function App() {
+const Wrapper = styled.div`
+  align-items: center;
+  background: #0f0f19;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+`
+
+export const App: React.FC = () => {
   return (
-    <div className="App">
+    <Wrapper>
       <WelcomeScreen />
-    </div>
+    </Wrapper>
   );
 }
 
