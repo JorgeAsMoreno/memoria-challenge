@@ -3,6 +3,11 @@ import { rotate, titleGradient } from "../../utils/animations.styles"
 import monitor from '../../assets/images/monitor.png'
 import keyboard from '../../assets/images/keyboard.png'
 export const WelcomeScreenContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
   padding: 1em;
   text-align: center;
 

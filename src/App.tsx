@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   background: #0f0f19;
   display: flex;
   justify-content: center;
-  height: 100vh;
   overflow: hidden;
   position: relative;
 `
