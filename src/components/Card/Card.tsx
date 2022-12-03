@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { ICard } from "./card.interface";
 import backFace from '../../assets/images/cover.png'
 import ReactCardFlip from "react-card-flip";
 import * as S from './card.styles'
+import { ICard } from "./card.interface";
 
 const Card: React.FC<ICard> = ({ frontFace, name, id, handleFlipCard, unFlippedCards, disabledCards }) => {
   const [isFlipped, setisFlipped] = useState<boolean>(false)
