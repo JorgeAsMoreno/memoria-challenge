@@ -25,3 +25,13 @@ export const rotate = keyframes`
     ransform: rotate(50deg)
   }
 `;
+
+export const fall = keyframes`
+  0% {top:-110px; transform: rotate(0deg) rotateY(-90deg); opacity:1;}
+  100% {top:900px; transform: rotate(360deg) rotateY(180deg); opacity:0.7;}
+`
+
+export const fall2 = keyframes`
+  0% {top:-110px; transform: rotate(0deg) rotateY(90deg); opacity:1;}
+  100% {top:900px; transform: rotate(-360deg) rotateY(-180deg); opacity:0.5;}
+`

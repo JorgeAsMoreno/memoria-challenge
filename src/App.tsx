@@ -22,6 +22,7 @@ export const SwitchThemeButton = styled.button`
   position: absolute;
   top: 2em;
   right: 2em;
+  z-index: 999;
 
   img {
     width: 4em;
@@ -60,7 +61,7 @@ export const App: React.FC = () => {
       }
       {
         stateGame === 2 ?
-        <WinScreen /> : null
+        <WinScreen {...{setStateGame}} /> : null
       }
     </Wrapper>
   );
