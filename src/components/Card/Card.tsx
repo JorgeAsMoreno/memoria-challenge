@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ICard } from "./Card.interface";
+import { ICard } from "./card.interface";
 import backFace from '../../assets/images/cover.png'
 import ReactCardFlip from "react-card-flip";
 import * as S from './card.styles'
@@ -27,10 +27,10 @@ const Card: React.FC<ICard> = ({ frontFace, name, id, handleFlipCard, unFlippedC
   }, [disabledCards])
 
   return (
-    <S.CardContainer>
+    <S.CardContainer className={!hasEvent ? 'disabled-card' : ''}>
       <ReactCardFlip {...{isFlipped}}>
-        <S.Image src={backFace} alt={`${name}back-face`} onClick={hasEvent ? handleImageClick : undefined} />
-        <S.Image src={frontFace} alt={`${name}front-face`} onClick={hasEvent ? handleImageClick : undefined} />
+        <S.Image src={backFace} alt={`${name}-back-face`} onClick={hasEvent ? handleImageClick : undefined} />
+        <S.Image src={frontFace} alt={`${name}-front-face`} onClick={hasEvent ? handleImageClick : undefined} />
       </ReactCardFlip>
     </S.CardContainer>
   )

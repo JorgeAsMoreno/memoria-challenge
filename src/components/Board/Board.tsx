@@ -69,7 +69,7 @@ const Board: React.FC<IBoard> = ({ setStateGame }) => {
     })
   }
 
-  if (foundPairs === 3) {
+  if (foundPairs === 8) {
     setTimeout(() => {
       setStateGame(2)
     }, 700)
@@ -79,13 +79,10 @@ const Board: React.FC<IBoard> = ({ setStateGame }) => {
     <S.BoardContainer>
       <S.BoardInformation>
         <S.Info>
-          Moves { attempts }
+          Movimientos: {attempts}
         </S.Info>
         <S.Info>
-          Time
-        </S.Info>
-        <S.Info>
-          Pairs: {foundPairs}
+          Pares: {foundPairs}
         </S.Info>
       </S.BoardInformation>
       <S.BoardGame>
@@ -94,9 +91,6 @@ const Board: React.FC<IBoard> = ({ setStateGame }) => {
             <Card key={id} {...{name, frontFace, id, handleFlipCard, unFlippedCards, disabledCards }} />
           ))
         }
-        <S.RestartGameButton>
-          Reiniciar Juego
-        </S.RestartGameButton>
       </S.BoardGame>
     </S.BoardContainer>
   )

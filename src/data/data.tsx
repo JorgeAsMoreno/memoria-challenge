@@ -38,6 +38,55 @@ export const data = [
     frontFace: ferret,
     name: "ferret"
   },
-
+  {
+    id: 7,
+    frontFace: wolf,
+    name: "wolf"
+  },
+  {
+    id: 8,
+    frontFace: wolf,
+    name: "wolf"
+  },
+  {
+    id: 9,
+    frontFace: canary,
+    name: "canary"
+  },
+  {
+    id: 10,
+    frontFace: canary,
+    name: "canary"
+  },
+  {
+    id: 11,
+    frontFace: seal,
+    name: "seal"
+  },
+  {
+    id: 12,
+    frontFace: seal,
+    name: "seal"
+  },
+  {
+    id: 13,
+    frontFace: bird,
+    name: "bird"
+  },
+  {
+    id: 14,
+    frontFace: bird,
+    name: "bird"
+  },
+  {
+    id: 15,
+    frontFace: whale,
+    name: "whale"
+  },
+  {
+    id: 16,
+    frontFace: whale,
+    name: "whale"
+  },
 ]
 
