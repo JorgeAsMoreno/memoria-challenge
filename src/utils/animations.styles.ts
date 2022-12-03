@@ -13,3 +13,15 @@ export const titleGradient = keyframes`
     color: #cf59e6;
   }
 `;
+
+export const rotate = keyframes`
+  0% {
+    transform: rotate(0deg)
+  }
+  50% {
+    transform: rotate(25deg)
+  }
+  100% {
+    ransform: rotate(50deg)
+  }
+`;
