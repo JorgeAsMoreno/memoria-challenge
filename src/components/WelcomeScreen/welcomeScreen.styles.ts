@@ -46,7 +46,8 @@ export const Title = styled.h1`
   margin: 0 0 1em 0;
   font-size: 4em;
   font-weight: bolder;
-
+  z-index: 999;
+  
   span {
     animation: ${titleGradient} 4s ease infinite;
   }
