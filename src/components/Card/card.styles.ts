@@ -9,6 +9,12 @@ export const CardContainer = styled.div`
   justify-content: center;;
   cursor: pointer;
 
+  &.disabled-card {
+    div.react-card-back {
+      opacity: .5;
+    }
+  }
+
   @media screen and ${devices.mobile} {
     width: 40%;
   }
