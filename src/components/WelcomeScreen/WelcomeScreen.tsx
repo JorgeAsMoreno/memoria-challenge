@@ -9,6 +9,7 @@ const WelcomeScreen: React.FC<IWelcomeScreen> = ({ setStart, changeDifficulty, l
     'Medio',
     'Difícil'
   ]
+  
   return (
     <S.WelcomeScreenContainer>
       <S.Title>Juego de <span>memoria</span></S.Title>

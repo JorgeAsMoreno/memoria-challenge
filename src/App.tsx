@@ -5,6 +5,7 @@ import WelcomeScreen from './components/WelcomeScreen/WelcomeScreen'
 import WinScreen from './components/WinScreen/WinScreen'
 import moon from './assets/icons/moon.svg'
 import sun from './assets/icons/sun.svg'
+
 const Wrapper = styled.div`
   align-items: center;
   background: var(--background);
@@ -15,7 +16,7 @@ const Wrapper = styled.div`
 `
 
 export const SwitchThemeButton = styled.button`
-  background: #fff;
+  background: var(--backgroundTheme);
   border-radius: 50%;
   border: 0;
   cursor: pointer;
@@ -33,6 +34,7 @@ export const App: React.FC = () => {
   const [stateGame, setStateGame] = useState(0)
   const [theme, setTheme] = useState<string>('light')
   const [level, setLevel] = useState<number>(0)
+
   //start game, 0 is not started, 1 in progress, 2 finished
   const changeStateGame = (value: number): void => {
     setStateGame(value)
