@@ -1,7 +1,7 @@
 import React from "react";
-import * as S from './winScreen.styles'
-import trophy from '../../assets/images/trophy.png'
+import winnerImage from '../../assets/images/first-place-medal.png'
 import Button from "../Button/Button";
+import * as S from './winScreen.styles'
 import { IWinScreen } from "./winScreen.interface";
 
 const WinScreen: React.FC<IWinScreen> = ({ setStateGame }) => {
@@ -25,7 +25,7 @@ const WinScreen: React.FC<IWinScreen> = ({ setStateGame }) => {
       <S.Title>Ganaste!</S.Title>
       <Button label="Volver a jugar" action={() => setStateGame(0)} />
       <S.Image
-        src={trophy}
+        src={winnerImage}
         alt="Winner"
       />
     </S.WinContainer>

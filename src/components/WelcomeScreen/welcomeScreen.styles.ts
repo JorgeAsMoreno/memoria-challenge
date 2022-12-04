@@ -42,7 +42,7 @@ export const WelcomeScreenContainer = styled.div`
 `
 
 export const Title = styled.h1`
-  color: #fff;
+  color: var(--color);
   margin: 0 0 1em 0;
   font-size: 4em;
   font-weight: bolder;

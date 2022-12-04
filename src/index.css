@@ -17,11 +17,16 @@ code {
 }
 
 :root {
-  --background: linear-gradient(to right, #8e2de2, #4a00e0);;
-  --color: #fff;
+  --background: #FFF;
+  --backgroundTheme: #000;
+  --boxShadow: 0px 0px 26px -7px rgba(196,196,196,1);
+  --color: #150050;
+  --button: #150050;
+  --borderButton: #150050;
+  --hoverButtonBg: #150050;
+  --hoverButtonColor: #FFF;
   --stripe1: #E7EFF8;
 	--stripe2: #DAE8F3;
-
 	--blue: #7996B3;
 	--green: #759F87;
 	--pink: #D18794;
@@ -30,6 +35,12 @@ code {
 }
 
 [data-theme='dark'] {
-  --background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  --color: #fff;
+  --background: #000;
+  --backgroundTheme: #FFF;
+  --boxShadow: box-shadow: 0;
+  --color: #FB2576;
+  --button: #FFF;
+  --borderButton: #FFF;
+  --hoverButtonBg: #FFF;
+  --hoverButtonColor: #FB2576;
 }

@@ -2,13 +2,15 @@ import styled from "styled-components";
 import devices from "../../utils/devices";
 
 export const CardContainer = styled.div`
+  align-items: center;
   display: flex;
-  margin: 1em 0;
+  margin: .2em 0;
   width: calc(250px - 10px);
   cursor: pointer;
   justify-content: center;;
   cursor: pointer;
-
+  padding: 0.5em 0;
+  
   &.disabled-card {
     div.react-card-back {
       opacity: .5;

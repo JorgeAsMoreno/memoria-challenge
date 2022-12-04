@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { data } from '../../data/data';
-import Card from '../Card/Card';
 import { IBoard, IBoardCards } from './board.interface';
+import Card from '../Card/Card';
 import * as S from './board.styles'
 
 const Board: React.FC<IBoard> = ({ setStateGame, level }) => {
@@ -75,14 +75,14 @@ const Board: React.FC<IBoard> = ({ setStateGame, level }) => {
     })
   }
 
-  if (foundPairs === 8) {
+  if (foundPairs === levelNumber[level] / 2) {
     setTimeout(() => {
       setStateGame(2)
     }, 700)
   }
 
   return (
-    <S.BoardContainer>
+    <S.BoardContainer {...{ setStateGame, level }}>
       <S.BoardInformation>
         <S.Info>
           Movimientos: {attempts}
