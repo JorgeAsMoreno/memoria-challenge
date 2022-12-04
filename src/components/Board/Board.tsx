@@ -4,9 +4,12 @@ import { IBoard, IBoardCards } from './board.interface';
 import Card from '../Card/Card';
 import * as S from './board.styles'
 
-const Board: React.FC<IBoard> = ({ setStateGame, level }) => {
+const Board: React.FC<IBoard> = ({ setStateGame, level, setLoseGame }) => {
+  const remainingNumber = [10,20,30]
+  const levelNumber = [8,12,16]
   const [cards, setCards] = useState<IBoardCards[]>([])
   const [attempts, setAttemts] = useState<number>(0)
+  const [remainingMoves, setRemainingMoves] = useState<number>(remainingNumber[level])
   const [foundPairs, setFoundPairs] = useState<number>(0)
   const [disabledCards, setDisabledCards] = useState<Array<number | undefined>>([]) // contains numbers that need to be disabled by match
   const [unFlippedCards, setUnflippedCards] = useState<Array<number | undefined>>([]) // contains numbers that need return the original position
@@ -18,12 +21,6 @@ const Board: React.FC<IBoard> = ({ setStateGame, level }) => {
     name: '',
     number: undefined
   })
-
-  const levelNumber = [
-    8,
-    12,
-    16
-  ]
 
   useEffect(() => {
     setCards(data.slice(0, levelNumber[level]).sort(() => { return Math.random() - 0.5 }))
@@ -41,6 +38,7 @@ const Board: React.FC<IBoard> = ({ setStateGame, level }) => {
       setFirstCardSelected({ name, number })
     } else if (!secondCardSelected.name) {
       setAttemts( attempts + 1 )
+      setRemainingMoves( remainingMoves - 1)
       setSecondCardSelected({ name, number })
     }
     return 1
@@ -75,17 +73,27 @@ const Board: React.FC<IBoard> = ({ setStateGame, level }) => {
     })
   }
 
-  if (foundPairs === levelNumber[level] / 2) {
+  if (foundPairs === levelNumber[level] / 2 && remainingMoves !== 0) {
+    setTimeout(() => {
+      setStateGame(2)
+    }, 700)
+  }
+
+  if (remainingMoves === 0) {
+    setLoseGame(true)
     setTimeout(() => {
       setStateGame(2)
     }, 700)
   }
 
   return (
-    <S.BoardContainer {...{ setStateGame, level }}>
+    <S.BoardContainer {...{ setStateGame, level, setLoseGame }}>
       <S.BoardInformation>
         <S.Info>
           Movimientos: {attempts}
+        </S.Info>
+        <S.Info>
+          Movimientos restantes: {remainingMoves}
         </S.Info>
         <S.Info>
           Pares: {foundPairs}

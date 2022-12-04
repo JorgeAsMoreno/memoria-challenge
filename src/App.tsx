@@ -34,7 +34,7 @@ export const App: React.FC = () => {
   const [stateGame, setStateGame] = useState(0)
   const [theme, setTheme] = useState<string>('light')
   const [level, setLevel] = useState<number>(0)
-
+  const [loseGame, setLoseGame] = useState<boolean>(false)
   //start game, 0 is not started, 1 in progress, 2 finished
   const changeStateGame = (value: number): void => {
     setStateGame(value)
@@ -63,11 +63,11 @@ export const App: React.FC = () => {
       }
       {
         stateGame === 1 ?
-        <Board {...{setStateGame, level}} /> : null
+        <Board {...{setStateGame, level, setLoseGame}} /> : null
       }
       {
         stateGame === 2 ?
-        <WinScreen {...{setStateGame}} /> : null
+        <WinScreen {...{setStateGame, loseGame}} /> : null
       }
     </Wrapper>
   );

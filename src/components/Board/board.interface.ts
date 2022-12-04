@@ -9,4 +9,5 @@ export interface IBoardCards {
 export interface IBoard {
   setStateGame: Dispatch<SetStateAction<number>>;
   level: number
+  setLoseGame: Dispatch<SetStateAction<boolean>>
 }
