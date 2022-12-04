@@ -12,6 +12,8 @@ const WinScreen: React.FC<IWinScreen> = ({ setStateGame, loseGame }) => {
     confettiArray.push(index)
   }
 
+  console.log(loseGame)
+
   return (
     <S.WinContainer>
       <S.ConfettiContainer>
@@ -23,7 +25,7 @@ const WinScreen: React.FC<IWinScreen> = ({ setStateGame, loseGame }) => {
         
       </S.ConfettiContainer>
 
-      <S.Title>{loseGame ? 'Perdiste' : 'Ganaste'}!</S.Title>
+      <S.Title>{loseGame === true ? 'Perdiste' : 'Ganaste'}!</S.Title>
       <Button label="Volver a jugar" action={() => setStateGame(0)} />
       <S.Image
         src={loseGame ? loseImage : winnerImage}

@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 import * as S from './board.styles'
 
 const Board: React.FC<IBoard> = ({ setStateGame, level, setLoseGame }) => {
-  const remainingNumber = [10,20,30]
+  const remainingNumber = [8,16,24]
   const levelNumber = [8,12,16]
   const [cards, setCards] = useState<IBoardCards[]>([])
   const [attempts, setAttemts] = useState<number>(0)
