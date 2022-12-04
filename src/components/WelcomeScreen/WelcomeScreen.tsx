@@ -14,7 +14,7 @@ const WelcomeScreen: React.FC<IWelcomeScreen> = ({ setStart, changeDifficulty, l
     <S.WelcomeScreenContainer>
       <S.Title>Juego de <span>memoria</span></S.Title>
       <S.Controls>
-        <Button label={levelText[level]} action={changeDifficulty} />
+        <Button label={`Cambiar dificultad: ${levelText[level]}`} action={changeDifficulty} />
         <Button label="Iniciar juego" action={() => setStart(1)} />
       </S.Controls>
     </S.WelcomeScreenContainer>
