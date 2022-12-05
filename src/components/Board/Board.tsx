@@ -4,8 +4,7 @@ import { IBoard, IBoardCards } from './board.interface';
 import Card from '../Card/Card';
 import * as S from './board.styles'
 
-const Board: React.FC<IBoard> = ({ setStateGame, level }) => {
-  const levelNumber = [8,12,16]
+const Board: React.FC<IBoard> = ({ setStateGame, level, levelNumber }) => {
   const [cards, setCards] = useState<IBoardCards[]>([])
   const [attempts, setAttempts] = useState<number>(0)
   const [foundPairs, setFoundPairs] = useState<number>(0)
@@ -77,7 +76,7 @@ const Board: React.FC<IBoard> = ({ setStateGame, level }) => {
   }
 
   return (
-    <S.BoardContainer {...{ setStateGame, level }}>
+    <S.BoardContainer {...{ setStateGame, level, levelNumber }}>
       <S.BoardInformation>
         <S.Info>
           Movimientos: <span>{attempts}</span>

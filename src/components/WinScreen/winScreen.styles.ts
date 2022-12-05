@@ -182,5 +182,6 @@ export const Title = styled.h2`
 `
 
 export const Image = styled.img`
+  margin-top: 2.5em;
   height: 30em;
 `

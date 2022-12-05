@@ -34,6 +34,7 @@ export const App: React.FC = () => {
   const [stateGame, setStateGame] = useState(0)
   const [theme, setTheme] = useState<string>('light')
   const [level, setLevel] = useState<number>(0)
+  const levelNumber = [8,12,16]
 
   //start game, 0 is not started, 1 in progress, 2 finished
   const changeStateGame = (value: number): void => {
@@ -59,11 +60,11 @@ export const App: React.FC = () => {
       </SwitchThemeButton>
       {
         stateGame === 0 ?
-        <WelcomeScreen setStart={changeStateGame} {...{changeDifficulty, level}} /> : null
+        <WelcomeScreen setStart={changeStateGame} {...{changeDifficulty, level, levelNumber}} /> : null
       }
       {
         stateGame === 1 ?
-        <Board {...{setStateGame, level}} /> : null
+        <Board {...{setStateGame, level, levelNumber}} /> : null
       }
       {
         stateGame === 2 ?

@@ -57,3 +57,13 @@ export const Controls = styled.div`
   display: flex;
   flex-direction: column;
 `
+
+export const Pairs = styled.p`
+  color: var(--color);
+  text-transform: lowercase;
+  margin-bottom: 4em;
+
+  span {
+    color: var(--highlightNumbers)
+  }
+`
