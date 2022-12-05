@@ -22,15 +22,21 @@ export const BoardInformation = styled.div`
   padding: 1em;
 
   @media screen and ${devices.desktop} {
-    flex-direction: row;
     margin: 4em;
   }
 `
 
 export const Info = styled.p`
   color: var(--color);
-  font-size: 1.5em;
+  font-size: 1.25em;
   margin: 0;
+
+  span {
+    color: var(--highlightText);
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin: 0 .125em;
+  }
 
   @media screen and ${devices.desktop} {
     font-size: 2em;
@@ -53,5 +59,24 @@ export const BoardGame = styled.div`
   @media screen and ${devices.desktop} {
     padding: 2em;
     width: 1000px;
+  }
+`
+export const WinConditions = styled.p`
+  align-items: center;
+  display: flex;
+  color: var(--color);
+  font-size: 1.275em;
+  margin: 0;
+  white-space: wrap;
+
+  span {
+    color: var(--highlightText);
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin: 0 .125em;
+  }
+
+  @media screen and ${devices.desktop} {
+    font-size: 2em;
   }
 `
