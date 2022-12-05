@@ -4,10 +4,10 @@ import { IBoard, IBoardCards } from './board.interface';
 import Card from '../Card/Card';
 import * as S from './board.styles'
 
-const Board: React.FC<IBoard> = ({ setStateGame, level, setLoseGame }) => {
+const Board: React.FC<IBoard> = ({ setStateGame, level }) => {
   const levelNumber = [8,12,16]
   const [cards, setCards] = useState<IBoardCards[]>([])
-  const [remainingMoves, setRemainingMoves] = useState<number>(levelNumber[level])
+  const [attempts, setAttempts] = useState<number>(0)
   const [foundPairs, setFoundPairs] = useState<number>(0)
   const [disabledCards, setDisabledCards] = useState<Array<number | undefined>>([]) // contains numbers that need to be disabled by match
   const [unFlippedCards, setUnflippedCards] = useState<Array<number | undefined>>([]) // contains numbers that need return the original position
@@ -35,7 +35,7 @@ const Board: React.FC<IBoard> = ({ setStateGame, level, setLoseGame }) => {
     if (!firstCardSelected.name) {
       setFirstCardSelected({ name, number })
     } else if (!secondCardSelected.name) {
-      setRemainingMoves( remainingMoves - 1)
+      setAttempts(attempts + 1)
       setSecondCardSelected({ name, number })
     }
     return 1
@@ -76,19 +76,15 @@ const Board: React.FC<IBoard> = ({ setStateGame, level, setLoseGame }) => {
     }, 700)
   }
 
-  if (remainingMoves === 0 && foundPairs !== levelNumber[level] / 2) {
-    setLoseGame(true)
-    setTimeout(() => {
-      setStateGame(2)
-    }, 700)
-  }
-
   return (
-    <S.BoardContainer {...{ setStateGame, level, setLoseGame }}>
+    <S.BoardContainer {...{ setStateGame, level }}>
       <S.BoardInformation>
-        <S.WinConditions>
-          Tienes: <span>{remainingMoves}</span> movimientos
-        </S.WinConditions>
+        <S.Info>
+          Movimientos: <span>{attempts}</span>
+        </S.Info>
+        <S.Info>
+          Pares a encontrar: <span>{levelNumber[level] / 2}</span>
+        </S.Info>
         <S.Info>
           Pares encontrados: <span>{foundPairs}</span>
         </S.Info>
